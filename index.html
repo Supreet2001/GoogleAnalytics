@@ -4,20 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Button Click Tracker</title>
-  
-  <!-- GA4 Tracking Code -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZQ2N4VVKN"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    // GA4 Configuration
-    gtag('config', 'G-EZQ2N4VVKN', {
-      page_title: document.title,
-      page_location: window.location.href
-    });
-
     // Click Tracking Function
     let clickCount = 0;
     function trackClick() {
