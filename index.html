@@ -7,6 +7,8 @@
   <script>
     // Click Tracking Function
     let clickCount = 0;
+    let secondaryClickCount = 0;
+    let naClickCount = 0;
     function trackClick() {
       clickCount++;
       document.getElementById('counter').textContent = clickCount;
@@ -16,6 +18,20 @@
         'event_label': 'Primary Button',
         'value': clickCount
       });
+    }
+    function trackSecondaryClick(){
+      secondaryClickCount++;
+      document.getElementById('counter2').textContent = secondaryClickCount;
+      
+      gtag('event', 'cta_s_menu_click', {
+        'event_category': 'engagement',
+        'event_label': 'Secondary Button',
+        'value': secondaryClickCount
+      });
+    }
+    function() trackNAClick(){
+      naClickCount++;
+      document.getElementById('counter3').textContent = naClickCount;
     }
   </script>
   
@@ -53,8 +69,13 @@ gtag('config', 'G-EZQ2N4VVKN');
 </script>
 <body>
   <h1>Click Tracker</h1>
-  <button onclick="trackClick()">Click Me</button>
-  <button>Click Me - Without GA4 Tracking</button>
-  <p>Clicks: <span id="counter">0</span></p>
+  <button onclick="trackClick()">Click Me - P</button>
+  <p>Clicks - P: <span id="counter">0</span></p>
+  <br/>
+  <button onclick=trackSecondaryClick()>Click Me - S</button>
+  <p>Clicks - S: <span id="counter2">0</span></p>
+  <br/>
+  <button onclick=trackNAClick()>Click Me - NA</button>
+  <p>Clicks - NA: <span id="counter3">0</span></p>
 </body>
 </html>
